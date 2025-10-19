@@ -1,11 +1,37 @@
+# End-of-line normalization
 * text=auto eol=lf
 
+# Language overrides for GitHub Linguist
+*.blade.php linguist-language=PHP
+*.php linguist-language=PHP
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+*.md linguist-language=Markdown
+
+# Diff settings (keep your existing ones)
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
 
+# Ignore dependencies and generated files from language stats
+/vendor/** linguist-vendored
+/node_modules/** linguist-vendored
+/public/** linguist-vendored
+/storage/** linguist-vendored
+
+# Ignore Hack files if any
+*.hh linguist-vendored
+*.hhi linguist-vendored
+
+# Ignore logs and environment files
+*.log linguist-vendored
+*.lock linguist-vendored
+*.env linguist-vendored
+*.sqlite linguist-vendored
+
+# Keep your export-ignore rules
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
